@@ -10,7 +10,6 @@
         http        = require('http'),
         
         express     = require('express'),
-        minify      = require('minify'),
         
         app         = express(),
         server      = http.createServer(app),
@@ -23,12 +22,12 @@
         ip          =   process.env.IP              ||  /* c9           */
                         '0.0.0.0',
                         
-        docker      = rasta('ubuntu');
+        docker      = rasta('spawnify');
         
         app .use(webconsole(server, docker))
-            .use(minify({
-                dir: DIR
-            }))
+            //.use(minify({
+            //    dir: DIR
+            //}))
             .use(express.static(DIR));
         
         server.listen(port, ip);
