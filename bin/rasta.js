@@ -22,7 +22,7 @@
         ip          =   process.env.IP              ||  /* c9           */
                         '0.0.0.0',
                         
-        docker      = rasta('spawnify');
+        docker      = ('spawnify');
         
         app .use(webconsole(server, docker))
             //.use(minify({
